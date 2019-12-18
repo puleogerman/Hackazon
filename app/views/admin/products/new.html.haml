@@ -1,0 +1,35 @@
+.new__showcase
+  .new__title
+    %h1 Nuevo Producto:
+    %br
+    %p Aqui puedes añadir un producto nuevo a tu bodega menol!
+    %br
+
+
+  .new__product
+
+    = form_with model: [:admin, @product], local: true do |form|
+      .new__form
+        = form.label :name
+        = form.text_field :name
+        %br
+
+        = form.label :price
+        = form.number_field :price
+        %br
+
+        = form.label :stock
+        = form.number_field :stock
+        %br
+
+        = form.label :category
+        = form.collection_select(:category_id, Category.all, :id, :name, prompt: 'Select Category')
+        %br
+
+        = form.label :image
+        = form.file_field :image
+        %br
+
+        = form.submit "Create"  
+
+

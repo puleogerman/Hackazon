@@ -1,0 +1,28 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.products {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.products__title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.products__showcase {
+    height: 90%;
+    width: 100%;
+    border-top: 3px black;
+}

@@ -1,0 +1,17 @@
+.admin__products
+  .admin__title
+    %h1 Productos
+    %br
+  .admin__products__showcase
+    - @products.each do |product|
+      .showcase__admin
+        .image__wrapper__admin
+          = image_tag(product.image, class: 'product__image')
+        .listed__admin
+          = product.name
+          %br
+          = "Precio: #{product.price}"
+          %br
+          = "Categoria: #{product.category_id}"
+          %br
+          = "Unidades: #{product.stock}"

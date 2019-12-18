@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Proyecto325Hackazon
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container
+      %header.header
+        .header__logo
+          = image_tag 'logo.png', alt: '', class: 'header__logo__image'
+        .header__content
+          %ul.buttons
+
+            %input.buttons__item__search{:placeholder => "Buscar", :type => "search", :value => ""}/
+            %li.buttons__item Mi carrito
+            %li.buttons__item Cerrar sesion
+          
+      .main__admin
+        = yield
+        -# Aqui esta mi informacion a mostrar
+        -# .main__gallery
+        -#   = image_tag 'galery.jpg', alt: '', class: 'main__gallery__image'
+        -# .main__container
+        -#   .main__container2
+        -#     .main__container__content  
+             
+
+      

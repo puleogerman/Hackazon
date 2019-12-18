@@ -1,0 +1,17 @@
+.products
+  .products__title
+    %h1 Productos disponibles
+  %hr
+  .products__showcase
+    - @products.each do |product|
+      .showcase
+        .image__wrapper
+          = image_tag(product.image, class: 'product__image')
+        .listed
+          = product.name
+          = "Precio: #{product.price}"
+          = "Categoria: #{product.category_id}"
+          = "Unidades: #{product.stock}"
+  
+    = will_paginate @products
+-# = will_paginate @items, renderer: RemoteLinkPagination::LinkRenderer
